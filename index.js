@@ -1,112 +1,97 @@
-// document.getElementById("count-el").innerText = 5
+// Create two variables, firstName and lastName
+// Concatenate the two variables into a third variable called fullName
+// Log fullName to the console
 
-//  let count = 5 + 7
+let firstName = "Joshua"
+let lastName = "Akinbode"
 
-//  console.log(count)
+ let fullName = firstName + " " + lastName
+console.log(fullName)
 
-// let myAge = 26
+let name = "Linda"
+let greeting = "Hi there"
 
-// console.log(myAge)
+// Create a function that logs out "Hi there, Linda!" when called
+let girlName = "Linda"
+let girlGreeting = "Hi there"
 
-// let firstCard = 10
-// let secondCard = 11
-// let sum = firstCard + secondCard
-// console.log(sum)
-
-// let myAge = 26
-// let humanDogRatio = 7
-// let myDogAge = myAge * humanDogRatio
-// console.log(myDogAge)
-
-// let  bonusPoints = 50
-// bonusPoints = bonusPoints + 50
-// console.log(bonusPoints)
-// bonusPoints = bonusPoints - 75
-// console.log(bonusPoints)
-// bonusPoints = bonusPoints + 45
-
-// console.log(bonusPoints)
-
-
-
-// function countdown() {
-//   console.log(5)
-//   console.log(4)
-//   console.log(3)
-//   console.log(2)
-//   console.log(1)
-//   console.log('Happy New Month!')
-// }
-// countdown()
-// function numbers() {
-//   console.log(42)
-// }
-// numbers()
-// let lap1 = 34
-// let lap2 = 33
-// let lap3 = 36
-
-// function totalLaps() {
-//   let total = lap1 + lap2 + lap3
-//   console.log(total)
- 
-// }
-// totalLaps()
-// Create a function that increments the lapsCompleted variable with one
-// Run it three times
-// let lapsCompleted = 0
-
-// function lapsIncrease () {
-//   lapsCompleted = lapsCompleted + 1
-//   console.log(lapsCompleted)
-// }
-// lapsIncrease()
-// lapsIncrease()
-// lapsIncrease()
-
-// intialize the count as 0
-// listen for clicks on the increment button
-// increment the count variable when the button is clicked
-// change the count-el in the HTML to reflect the new count
-let countEl = document.getElementById("count-el")
-let saveEL = document.getElementById("save-el")
-
-
-console.log(countEl)
-
-let count = 0
-
-function increment () {
-  console.log('the button was clicked')
-  count += 1
-  countEl.textContent = count
+function greet() {
+  console.log(girlGreeting + ", " + girlName + "!" )
 }
-//textContent mdn
+greet()
 
-function save() {
-  let countStr = count + " - "
-  saveEL.textContent += countStr
-  console.log(count)
+let myPoints = 3
+
+// Create two functions, add3Points() and remove1Point(), and have them
+// add/remove points to/from the myPoints variable
+// Call the functions to that the line below logs out 10
+
+// function add3Points() {
+//   myPoints = myPoints + 3
+  
+// }
+// function remove1Point() {
+//   myPoints = myPoints - 1
+  
+// }
+// add3Points()
+// add3Points()
+// add3Points()
+// remove1Point()
+// remove1Point()
+// console.log(myPoints)
+
+// Try to predict what each of the lines will log out
+// console.log("2" + 2) //"22"
+// console.log(11 + 7) //18
+// console.log(6 + "5") //"65"
+// console.log("My points: " + 5 + 9) //My points: 59
+// console.log(2 + 2) // 4
+// console.log("11" + "14") // "1144"
+
+// When the user clicks the purchase button, render out
+// "Something went wrong, please try again" in the paragraph
+// that has the id="error".
+
+// let errorID = document.getElementById("error")
+// console.log(errorID)
+
+// function purchase() {
+//   errorID.textContent = "Something went wrong, please try again"
+// }
+
+// console.log(errorID.textContent)
+
+let num1 = 8
+let num2 = 2
+document.getElementById("num1-el").textContent = num1
+document.getElementById("num2-el").textContent = num2
+let sumEL = document.getElementById("sum-el") 
+
+// Create four functions: add(), subtract(), divide(), multiply()
+// Call the correct function when the user clicks on one of the buttons
+// Perform the given calculation using num1 and num2
+// Render the result of the calculation in the paragraph with id="sum-el"
+
+// E.g. if the user clicks on the "Plus" button, you should render
+// "Sum: 10" (since 8 + 2 = 10) inside the paragraph with id="sum-el"
+function add() {
+  let sum = num1 + num2
+  sumEL.textContent = "Sum:" + sum
 }
 
-function reset() {
-  count = 0
-  countEl.textContent = 0
+
+function subtract() {
+  let subtract = num1 - num2
+  sumEL.textContent = "Sum: " + subtract
 }
 
-// let username = "Bisola"
-// let message = "you have 3 new notifications"
-// let messageToUser = "We have Logged you in"
-// console.log(message + ", " + username + "!")
+function divide() {
+  let divide = num1 / num2
+  sumEL.textContent = "Sum: " + divide
+}
 
-// console.log(messageToUser + ", " + username + "!")
-
-// Create two variables, name and greeting. The name variable should store your name,
-// and the greeting should store e.g. "Hi, my name is "
-
-// Create a third variable, myGreeting, that contatenates the two strings
-// Log myGreeting to the console
-// let name = "Bisola"
-// let greeting = "Hi, my name is "
-// let myGreeting = greeting + name
-// console.log(myGreeting)
+function multiply() {
+  let multiply = num1 * num2
+  sumEL.textContent = "Sum: " + multiply
+}
