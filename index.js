@@ -1,97 +1,94 @@
-// Create two variables, firstName and lastName
-// Concatenate the two variables into a third variable called fullName
-// Log fullName to the console
+let home = 0;
+let guest = 0;
+let foul = 0;
+let guestFouls = 0;
+let count = 0;
+let minutes = 12;
+let seconds = 0;
 
-let firstName = "Joshua"
-let lastName = "Akinbode"
+let homeEL = document.getElementById("home-score")
+let guestEL = document.getElementById("guest-score")
+let foulEL = document.getElementById("home-foul")
+let guestFoulEL = document.getElementById("guest-foul")
+let timerEL = document.getElementById("timer-count")
 
- let fullName = firstName + " " + lastName
-console.log(fullName)
-
-let name = "Linda"
-let greeting = "Hi there"
-
-// Create a function that logs out "Hi there, Linda!" when called
-let girlName = "Linda"
-let girlGreeting = "Hi there"
-
-function greet() {
-  console.log(girlGreeting + ", " + girlName + "!" )
+function incrementHome1() {
+  home += 1
+  homeEL.textContent = home  
 }
-greet()
+function incrementHome2() {
+  home += 2
+  homeEL.textContent = home
 
-let myPoints = 3
+}
 
-// Create two functions, add3Points() and remove1Point(), and have them
-// add/remove points to/from the myPoints variable
-// Call the functions to that the line below logs out 10
+function incrementHome3() {
+  home += 3
+  homeEL.textContent = home
+}
 
-// function add3Points() {
-//   myPoints = myPoints + 3
+function incrementGuest1() {
+  guest += 1
+  guestEL.textContent = guest
+}
+function incrementGuest2() {
+  guest += 2
+  guestEL.textContent = guest
+}
+function incrementGuest3() {
+  guest += 3
+  guestEL.textContent = guest
+}
+
+
+function homeFoul() {
+  foul += 1
+  foulEL.textContent = foul
+}
+
+ function guestFoul() {
+   guestFouls += 1
+   guestFoulEL.textContent = guestFouls
+   
+ }
+
+ function updateTimer() {
+  if (seconds === 0) {
+    if (minutes === 0) {
+      clearInterval(timerInterval); // Stop the timer when it reaches 0:00
+      return;
+    }
+    minutes--;
+    seconds = 59;
+  } else {
+    seconds--;
+  }
+
+  timerEL.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function start() {
+  // Set the initial timer display
+  timerEL.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+  // Start the timer interval
+  timerInterval = setInterval(updateTimer, 1000);
+}
+
+
+
+function newGame() {
+
+  // Stop any running timer
+  clearInterval(timerInterval);
+
+  // Reset timer to 00:00
+  minutes = 0;
+  seconds = 0;
+  timerEL.textContent = "00:00";
   
-// }
-// function remove1Point() {
-//   myPoints = myPoints - 1
-  
-// }
-// add3Points()
-// add3Points()
-// add3Points()
-// remove1Point()
-// remove1Point()
-// console.log(myPoints)
-
-// Try to predict what each of the lines will log out
-// console.log("2" + 2) //"22"
-// console.log(11 + 7) //18
-// console.log(6 + "5") //"65"
-// console.log("My points: " + 5 + 9) //My points: 59
-// console.log(2 + 2) // 4
-// console.log("11" + "14") // "1144"
-
-// When the user clicks the purchase button, render out
-// "Something went wrong, please try again" in the paragraph
-// that has the id="error".
-
-// let errorID = document.getElementById("error")
-// console.log(errorID)
-
-// function purchase() {
-//   errorID.textContent = "Something went wrong, please try again"
-// }
-
-// console.log(errorID.textContent)
-
-let num1 = 8
-let num2 = 2
-document.getElementById("num1-el").textContent = num1
-document.getElementById("num2-el").textContent = num2
-let sumEL = document.getElementById("sum-el") 
-
-// Create four functions: add(), subtract(), divide(), multiply()
-// Call the correct function when the user clicks on one of the buttons
-// Perform the given calculation using num1 and num2
-// Render the result of the calculation in the paragraph with id="sum-el"
-
-// E.g. if the user clicks on the "Plus" button, you should render
-// "Sum: 10" (since 8 + 2 = 10) inside the paragraph with id="sum-el"
-function add() {
-  let sum = num1 + num2
-  sumEL.textContent = "Sum:" + sum
-}
-
-
-function subtract() {
-  let subtract = num1 - num2
-  sumEL.textContent = "Sum: " + subtract
-}
-
-function divide() {
-  let divide = num1 / num2
-  sumEL.textContent = "Sum: " + divide
-}
-
-function multiply() {
-  let multiply = num1 * num2
-  sumEL.textContent = "Sum: " + multiply
+  home = 0
+  guest = 0
+  homeEL.textContent = home
+  guestEL.textContent = guest
 }
