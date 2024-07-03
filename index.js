@@ -75,6 +75,14 @@ function start() {
   timerInterval = setInterval(updateTimer, 1000);
 }
 
+function pause() {
+    // Clear the timer interval to pause the timer
+    clearInterval(timerInterval);
+    timerEL.textContent = '00:00';
+  }
+
+
+
 
 
 function newGame() {
@@ -89,6 +97,10 @@ function newGame() {
   
   home = 0
   guest = 0
+  foul = 0
+  guestFouls = 0
   homeEL.textContent = home
   guestEL.textContent = guest
+  foulEL.textContent = foul
+  guestFoulEL.textContent = guestFouls
 }
